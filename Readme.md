@@ -29,3 +29,7 @@ in public/js directory for what's required.
 * virtual table of departures
 * better arrival estimates based on traffic and historical data
 * ride planner
+
+## License
+
+CTM is open source software licensed under the GPL3 License. See the LICENSE.txt file for more information.
