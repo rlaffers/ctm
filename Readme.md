@@ -1,4 +1,4 @@
-# City Transportation Map
+# City Transport Map
 
 Live map of public transportation vehicles in Bratislava, Slovakia.
 
@@ -16,6 +16,8 @@ Live map of public transportation vehicles in Bratislava, Slovakia.
 
 Before use, a config.js file must be created before first use. See the config.example.js
 in public/js directory for what's required.
+
+Then configure your web server's document root to public/ and open the page in browser.
 
 ## TODO
 

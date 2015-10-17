@@ -1,0 +1,24 @@
+{
+  "name": "ctm",
+  "version": "0.1.0",
+  "description": "City Transport Map (CTM) provides a live map of public transportation vehicles in Bratislava, Slovakia.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rlaffers/ctm.git"
+  },
+  "author": "Richard Laffers",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/rlaffers/ctm/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.11.3",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-uglify": "~0.9.2",
+    "grunt-contrib-compass": "~1.0.4",
+    "time-grunt": "~1.2.1",
+    "load-grunt-tasks": "~3.3.0"
+  }
+}
