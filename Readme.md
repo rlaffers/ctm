@@ -2,6 +2,8 @@
 
 Live map of public transportation vehicles in Bratislava, Slovakia.
 
+![Screenshot](screenshot.png?raw=true "Screenshot of the City Transportation Map")
+
 ## Features
 
 * live positions of vehicles on the map
