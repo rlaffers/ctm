@@ -1,3 +1,4 @@
 *.swp
 *.swo
 public/js/config.js
+public/.sass-cache/*

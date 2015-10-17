@@ -2,11 +2,11 @@
 var ctm = ctm || {};
 
 /**
- * MarkMyPosition 
+ * markMyPosition 
  *
  * @var {int} 	Refresh rate in milliseconds.
  */
-ctm.MarkMyPosition = function MarkMyposition(refreshRate) {
+ctm.markMyPosition = function markMyposition(refreshRate) {
 		if (!navigator.geolocation) {
 				console.error('Sorry, no geolocation in your browser.');
 				return;

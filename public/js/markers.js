@@ -2,7 +2,6 @@
 var ctm = ctm || {};
 
 /**
- * AddMarker 
  *
  * Displays marker
  *
@@ -11,7 +10,7 @@ var ctm = ctm || {};
  * @param {int} 	lineNumber
  * @param {int} 	timestamp
  */
-ctm.AddMarker = function AddMarker(id, coords, type, lineNumber, timestamp) {
+ctm.addMarker = function addMarker(id, coords, type, lineNumber, timestamp) {
 		var marker = new ctm.Marker(id, timestamp, [coords[0], coords[1]], {
 				icon: L.divIcon({
 					className: this.icons[type] + ' line-number line-number-' + lineNumber, 

@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
-
 @mixin icon() {
 		width: 32px;
 		height: 25px;
@@ -31,28 +30,50 @@ html, body {
 		padding: 0;
 }
 
+#container {
+		position: relative;
+		height: 100%;
+		width: 100%;
+}
+
 h1 {
-		color: #777777;
-		height: 38px;
-		line-height: 38px;
-		margin: 11px 0 0 50px;
-		padding: 0;
 		position: absolute;
+		top: 0;
 		z-index: 100;
+		width: 98.8%;
+		line-height: 24px;
+		height: 24px;
+		margin: 0;
+		padding: 3px 0.6% 3px 0.6%;
+		color: #777777;
 		background: rgba(255, 255, 255, .8);
-		padding: 7px 15px;
 		box-shadow: 0 1px 5px rgba(0,0,0,0.65);
 		border-radius: 4px;
-		font-family: 'Oswald', sans-serif;
+		font: 18px bold 'Oswald', sans-serif;
 }
 
 #map {
 		z-index: 1;
 		position: absolute;
-		top: 0;
+		top: 30px;
 		width: 100%;
-		height: 100%; 
+		height: 96%; 
 }
+
+#search {
+		position: absolute;
+		z-index: 101;
+		min-width: 250px;
+		height: 36px;
+		margin: 0;
+		padding: 0 4px;
+		top: 38px;
+		left: 0.6%;
+		/*background: rgba(255, 255, 255, .8);*/
+		border-radius: 4px;
+		/*box-shadow: 0 1px 5px rgba(0,0,0,0.65);*/
+}
+
 
 @for $i from 1 through 500 {
 	.line-number-#{$i}:after {

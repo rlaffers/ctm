@@ -12,3 +12,9 @@ h2. TODO
 * layer with bus stops
 * layer with traffic data
 * websockets for push messages (requires a new server)
+* search location
+* filter by line number
+* line info (destination) in the tooltip
+* follow vehicle
+* virtual table of departures
+* better arrival estimates based on traffic and historical data
