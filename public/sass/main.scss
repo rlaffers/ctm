@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+
+@mixin icon() {
+		width: 32px;
+		height: 25px;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		position:relative;
+}
+
+@mixin lineNumber($lineNumber) {
+		content: '#{$lineNumber}';
+		min-width: 20px;
+		height: 20px;
+		padding: 0 2px;
+		border: 1px solid;
+		border-radius: 10px;
+		font-size: 16px;
+		font-weight: bold;
+		position: absolute;
+		top: -5px;
+		right: -18px;
+		text-align: center;
+}
+
+html, body {
+		height: 100%;
+		position: relative;
+		margin: 0;
+		padding: 0;
+}
+
+h1 {
+		color: #777777;
+		height: 38px;
+		line-height: 38px;
+		margin: 11px 0 0 50px;
+		padding: 0;
+		position: absolute;
+		z-index: 100;
+		background: rgba(255, 255, 255, .8);
+		padding: 7px 15px;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+		border-radius: 4px;
+		font-family: 'Oswald', sans-serif;
+}
+
+#map {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%; 
+}
+
+@for $i from 1 through 500 {
+	.line-number-#{$i}:after {
+			@include lineNumber($i);
+	}
+}
+
+
+.icon-tram {
+		@include icon;
+		background-image: image-url('icon-tram.png');
+
+		&.line-number:after {
+				padding: 0;
+				color: #BC0000;
+				border-color: #FF2B2B;
+				background-color: #FFE7E7;
+		}
+}
+
+.icon-bus {
+		@include icon;
+		background-image: image-url('icon-bus.png');
+
+		&.line-number:after {
+				color: #0043FF;
+				border-color: #5E88FF;
+				background-color: #E7EDFF;
+		}
+}
+.icon-trolley {
+		@include icon;
+		background-image: image-url('icon-trolley.png');
+
+		&.line-number:after {
+				color: #326F0E;
+				border-color: #579741;
+				background-color: #DBFFC5;
+		}
+}
+.icon-my-position {
+		@include icon;
+		/*background-image: image-url('icon-person.png');*/
+}
