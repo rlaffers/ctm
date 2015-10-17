@@ -1,5 +1,3 @@
-var ctm = ctm || {};
-
 //ctm.apiUrl = 'https://ctm.mrdnik.sk/v/1/json/example';
 ctm.apiUrl = 'https://something.example.net/api';
 

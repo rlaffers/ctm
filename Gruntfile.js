@@ -1,9 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
-
     require('time-grunt')(grunt);
-
-
     var pkg = grunt.file.readJSON('package.json');
 
     // Project configuration.
@@ -36,6 +33,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: [
+                    "public/js/core.js",
                     "public/js/leaflet-providers.js",
                     "public/js/config.js",
                     "public/js/my_position.js",
@@ -79,4 +77,7 @@ module.exports = function(grunt) {
 
     // autoload tasks
     require('load-grunt-tasks')(grunt);
+
+    // TODO create index.production.html
+    grunt.registerTask('build', ['jshint', 'concat:dist', 'uglify:dist']);
 };

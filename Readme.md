@@ -14,10 +14,16 @@ Live map of public transportation vehicles in Bratislava, Slovakia.
 
 ## Installation
 
-Before use, a config.js file must be created before first use. See the config.example.js
-in public/js directory for what's required.
+Install dependencies:
 
-Then configure your web server's document root to public/ and open the page in browser.
+```
+npm install
+```
+
+Create a config.js file at public/js directory. See the public/js/config.example.js
+ for what's required.
+
+Lastly, configure your web server's document root to public/ and open the page in browser.
 
 ## TODO
 

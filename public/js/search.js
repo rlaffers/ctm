@@ -1,5 +1,3 @@
-var ctm = ctm || {};
-
 /**
  * search
  *
@@ -7,7 +5,7 @@ var ctm = ctm || {};
  * b) TODO Offers a list of addresses matching the needle.
  */
 ctm.search = function search(value) {
-    if (parseInt(value, 10) != value) {
+    if (String(parseInt(value, 10)) !== String(value)) {
         console.log("Only numbers can be entered at the moment.", value);
         return;
     }

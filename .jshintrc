@@ -100,7 +100,8 @@
     // Custom Globals
     "globals" : {
         "L" : false,
-        "ctm" : false,
+        "ctm" : true,
+        "require" : false,
         "$": false
     } // additional predefined global variables
 }

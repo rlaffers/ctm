@@ -1,6 +1,3 @@
-// CTM namespace
-var ctm = ctm || {};
-
 /**
  * markMyPosition 
  *

@@ -1,5 +1,3 @@
-var ctm = ctm || {};
-
 ctm.fuzzyStrings = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -44,7 +42,7 @@ ctm.fuzzy = function fuzzy(timestamp) {
     var years = days / 365;
 
     function substitute(stringOrFunction, number) {
-        var string = typeof stringOrFunction == 'function' ? stringOrFunction(number, delta) : stringOrFunction;
+        var string = typeof stringOrFunction === 'function' ? stringOrFunction(number, delta) : stringOrFunction;
         var value = ($l.numbers && $l.numbers[number]) || number;
         return string.replace(/%d/i, value);
     }
@@ -64,10 +62,10 @@ ctm.fuzzy = function fuzzy(timestamp) {
     days < 30 && days >= 5 && substitute($l.days, Math.round(days)) ||
     days < 45 && substitute($l.month, 1) ||
     //days < 365 && substitute($l.months, Math.round(days / 30)) ||
-    days < 365 && months > 1 && months < 5 && substitute($l.months2, Math.round(days / 30)) ||
-    days < 365 && months >= 5 && substitute($l.months, Math.round(days / 30)) ||
+    days < 365 && days > 30 && days < 150 && substitute($l.months2, Math.round(days / 30)) ||
+    days < 365 && days >= 150 && substitute($l.months, Math.round(days / 30)) ||
     years < 1.5 && substitute($l.year, 1) ||
-    years > 1.5 && yeras < 5 && substitute($l.years2, Math.round(years)) ||
+    years > 1.5 && years < 5 && substitute($l.years2, Math.round(years)) ||
     substitute($l.years, Math.round(years));
 
     var separator = $l.wordSeparator || "";
