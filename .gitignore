@@ -1,6 +1,5 @@
 *.swp
 *.swo
-public/js/config.js
 public/.sass-cache/*
 .sass-cache/*
 node_modules/*
