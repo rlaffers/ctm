@@ -747,6 +747,10 @@ var ctm = {};
 //ctm.apiUrl = 'https://ctm.mrdnik.sk/v/1/json/example';
 ctm.apiUrl = 'https://imhd.zoznam.sk/rt/danubehackdata';
 
+// access token for the mapbox account
+ctm.mapboxAccessToken = null;
+ctm.mapboxId = 'username.somestring';
+
 // refresh map for vehicle positions in millisecs
 ctm.refreshRate = 10000;
 
@@ -996,13 +1000,13 @@ window.onload = function() {
 
         // base layers
         var baseMaps = {
-            //mapbox: L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                //attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-                //maxZoom: 18,
-                //minZoom: 13,
-                //id: ctm.mapboxId,
-                //accessToken: ctm.mapboxAccessToken
-            //}),
+            mapbox: (ctm.mapboxAccessToken) ? L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+                maxZoom: 18,
+                minZoom: 13,
+                id: ctm.mapboxId,
+                accessToken: ctm.mapboxAccessToken
+            }) : null,
             osm: L.tileLayer.provider('OpenStreetMap.Mapnik'),
             transport: L.tileLayer.provider('Thunderforest.Transport')
 
@@ -1061,8 +1065,10 @@ window.onload = function() {
     var layers = L.control.layers(null, null, {
         position: 'topright'
     });
-    //layers.addBaseLayer(baseMaps.mapbox, 'Základná mapa');
     layers.addBaseLayer(baseMaps.osm, 'Základná mapa');
+    if (baseMaps.mapbox) {
+        layers.addBaseLayer(baseMaps.mapbox, 'Mapbox');
+    }
     layers.addBaseLayer(baseMaps.transport, 'Mapa MHD');
     layers.addOverlay(overlays.trams, 'Električky');
     layers.addOverlay(overlays.buses, 'Autobusy');
