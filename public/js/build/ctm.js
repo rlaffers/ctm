@@ -748,8 +748,8 @@ var ctm = {};
 ctm.apiUrl = 'https://imhd.zoznam.sk/rt/danubehackdata';
 
 // access token for the mapbox account
-ctm.mapboxAccessToken = null;
-ctm.mapboxId = 'username.somestring';
+ctm.mapboxAccessToken = 'pk.eyJ1IjoicmxhZmZlcnMiLCJhIjoiY2lmdGNyZmZlMDF3N3RkbTBxMmcxcmwzYyJ9.jTqMImbRFKuNS39QXqSuEA';
+ctm.mapboxId = 'rlaffers.nnf9dj3d';
 
 // refresh map for vehicle positions in millisecs
 ctm.refreshRate = 10000;
