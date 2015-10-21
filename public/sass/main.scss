@@ -40,7 +40,7 @@ html, body {
 		width: 100%;
 }
 
-h1 {
+#header {
 		position: absolute;
 		top: 0;
 		z-index: 100;
@@ -62,6 +62,15 @@ h1 {
 		top: $headerHeight + $headerPaddingTop + $headerPaddingBottom;
 		bottom: 0;
 		width: 100%;
+}
+
+
+#footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+		background: transparent;
 }
 
 #search {
