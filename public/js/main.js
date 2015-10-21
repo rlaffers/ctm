@@ -86,11 +86,6 @@ window.onload = function() {
 
     ctm.overlays = overlays;
 
-    // TODO skuska
-    //ctm.addMarker(1050, [48.14383305429929, 17.11297631263733], 'trams', '1', 1234567890);
-    //ctm.addMarker(1051, [48.14220794586267, 17.11073398590088], 'buses', '93', 'pred 30 sekundami');
-    //ctm.addMarker(1052, [48.1428451090465, 17.10644245147705], 'trolleys', '204', 'pred 1 hodinou');
-
     // attach listeners to search box
     var search = document.getElementById('search');
     if (!search) {

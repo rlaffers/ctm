@@ -28,7 +28,8 @@ ctm.fuzzy = function fuzzy(timestamp) {
     var now = Date.now();
     if (timestamp > now) {
         console.warn("Time is in future!", timestamp);
-        return timestamp;
+        var d = new Date(timestamp);
+        return d.toDateString() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
     }
     var delta = now - timestamp;
     var $l = this.fuzzyStrings;
