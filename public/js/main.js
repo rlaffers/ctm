@@ -1,6 +1,6 @@
 // Initialize the map
 window.onload = function() {
-		ctm.map = (function (window) {
+    ctm.map = (function (window) {
 
         // some defaults if geolocation is not available
         var defaultX = 48.14425;
@@ -18,6 +18,7 @@ window.onload = function() {
             }) : null,
             osm: L.tileLayer.provider('OpenStreetMap.Mapnik'),
             transport: L.tileLayer.provider('Thunderforest.Transport')
+            //,google: L.Google('ROADMAP')
 
         };
 
@@ -79,6 +80,7 @@ window.onload = function() {
         layers.addBaseLayer(baseMaps.mapbox, 'Mapbox');
     }
     layers.addBaseLayer(baseMaps.transport, 'Mapa MHD');
+    //layers.addBaseLayer(baseMaps.google, 'Google');
     layers.addOverlay(overlays.trams, 'Električky');
     layers.addOverlay(overlays.buses, 'Autobusy');
     layers.addOverlay(overlays.trolleys, 'Trolejbusy');
@@ -108,5 +110,5 @@ window.onload = function() {
     // TODO ak server vracia data len pre vyrez mapy, tak ked sa zmeni doom, treba refresh
     ctm.refresh(ctm.refreshRate);
     return map;
-		}(window));
+    }(window));
 };

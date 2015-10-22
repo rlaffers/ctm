@@ -55,8 +55,7 @@ ctm.fuzzy = function fuzzy(timestamp) {
     //minutes < 45 && substitute($l.minutes, Math.round(minutes)) ||
     minutes < 90 && substitute($l.hour, 1) ||
     //hours < 24 && substitute($l.hours, Math.round(hours)) ||
-    hours < 24 && hours > 1 && hours < 5 && substitute($l.hours2, Math.round(hours)) ||
-    hours < 24 && hours >= 5 && substitute($l.hours, Math.round(hours)) ||
+    hours < 24 && hours > 1 && substitute($l.hours, Math.round(hours)) ||
     hours < 42 && substitute($l.day, 1) ||
     //days < 30 && substitute($l.days, Math.round(days)) ||
     days < 30 && days > 1 && days < 5 && substitute($l.days2, Math.round(days)) ||
