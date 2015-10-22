@@ -102,6 +102,7 @@
         "L" : false,
         "ctm" : true,
         "require" : false,
+        "google" : false,
         "$": false
     } // additional predefined global variables
 }

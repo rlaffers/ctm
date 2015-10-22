@@ -1009,7 +1009,7 @@ window.onload = function() {
             }) : null,
             osm: L.tileLayer.provider('OpenStreetMap.Mapnik'),
             transport: L.tileLayer.provider('Thunderforest.Transport')
-            //,google: L.Google('ROADMAP')
+            ,google: new L.Google('ROADMAP')
 
         };
 
@@ -1071,7 +1071,7 @@ window.onload = function() {
         layers.addBaseLayer(baseMaps.mapbox, 'Mapbox');
     }
     layers.addBaseLayer(baseMaps.transport, 'Mapa MHD');
-    //layers.addBaseLayer(baseMaps.google, 'Google');
+    layers.addBaseLayer(baseMaps.google, 'Google');
     layers.addOverlay(overlays.trams, 'Električky');
     layers.addOverlay(overlays.buses, 'Autobusy');
     layers.addOverlay(overlays.trolleys, 'Trolejbusy');
