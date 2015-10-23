@@ -40,6 +40,7 @@ module.exports = function(grunt) {
                 src: [
                     "public/js/core.js",
                     "public/js/leaflet-providers.js",
+                    "public/js/Google.js",
                     "public/js/config.js",
                     "public/js/my_position.js",
                     "public/js/markers.js",
