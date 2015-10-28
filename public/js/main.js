@@ -17,8 +17,10 @@ window.onload = function() {
                 accessToken: ctm.mapboxAccessToken
             }) : null,
             osm: L.tileLayer.provider('OpenStreetMap.Mapnik'),
-            transport: L.tileLayer.provider('Thunderforest.Transport')
-            ,google: new L.Google('ROADMAP')
+            transport: L.tileLayer.provider('Thunderforest.Transport'),
+            google: new L.Google('ROADMAP', {
+                traffic: true
+            })
 
         };
 
@@ -79,8 +81,8 @@ window.onload = function() {
     if (baseMaps.mapbox) {
         layers.addBaseLayer(baseMaps.mapbox, 'Mapbox');
     }
-    layers.addBaseLayer(baseMaps.transport, 'Mapa MHD');
-    layers.addBaseLayer(baseMaps.google, 'Google');
+    layers.addBaseLayer(baseMaps.transport, 'Linky MHD');
+    layers.addBaseLayer(baseMaps.google, 'Premávka');
     layers.addOverlay(overlays.trams, 'Električky');
     layers.addOverlay(overlays.buses, 'Autobusy');
     layers.addOverlay(overlays.trolleys, 'Trolejbusy');

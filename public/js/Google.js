@@ -16,6 +16,7 @@ L.Google = L.Class.extend({
 		opacity: 1,
 		continuousWorld: false,
 		noWrap: false,
+        traffic: false,
 		mapOptions: {
 			backgroundColor: '#dddddd'
 		}
@@ -108,6 +109,11 @@ L.Google = L.Class.extend({
 		if (!this._ready) {
             return;   
         }
+        // reuse the map object when switching back!
+        if (this._initialized) {
+            return;
+        }
+
 		this._google_center = new google.maps.LatLng(0, 0);
 		var map = new google.maps.Map(this._container, {
 		    center: this._google_center,
@@ -124,13 +130,19 @@ L.Google = L.Class.extend({
 		    backgroundColor: this.options.mapOptions.backgroundColor
 		});
 
+        if (this.options.traffic) {
+            var trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+        }
+
 		var _this = this;
-		this._reposition = google.maps.event.addListenerOnce(map, "center_changed",
-			function() { _this.onReposition(); });
+		this._reposition = google.maps.event.addListenerOnce(map, "center_changed", function() { _this.onReposition(); });
 		this._google = map;
 
-		google.maps.event.addListenerOnce(map, "idle",
-			function() { _this._checkZoomLevels(); });
+		google.maps.event.addListenerOnce(map, "idle", function() { _this._checkZoomLevels(); });
+
+        this._initialized = true;
+
 	},
 
 	_checkZoomLevels: function() {

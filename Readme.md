@@ -7,7 +7,7 @@ Live map of public transportation vehicles in Bratislava, Slovakia.
 ## Features
 
 * live positions of vehicles on the map
-* 3 base maps available (Standard, Transport, OpenStreetMap)
+* various base maps available (Standard, Public Transport, Traffic)
 * filtering by vehicle types (trams, buses, trolleybuses)
 * filtering by line number
 * time of the last recorded position in the tooltip
@@ -28,7 +28,7 @@ Lastly, configure your web server's document root to public/ and open the page i
 ## TODO
 
 * layer with bus stops
-* layer with traffic data
+* ~~layer with traffic data~~
 * websockets for push messages (requires a new server)
 * search for location
 * ~~filter by line number~~
